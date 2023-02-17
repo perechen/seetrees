@@ -1,0 +1,15 @@
+Package: seetrees
+Type: Package
+Title: Extended features for `stylo` 
+Version: 0.1.0
+Author: Artjoms Šeļa
+Maintainer: The package maintainer <artemy.she@gmail.com>
+Description: The package purpose is to enhance interpretability of stylometry, and specifically unsupervised analysis. For now, the package is used to conveniently cut (and visualize) dendrograms at chosen height and find features associated with clusters. 
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 4.1.2)
+Imports:
+  tidyr, dplyr,  stringr, FactoMineR, dendextend, ggplot2
+RoxygenNote: 7.1.1
