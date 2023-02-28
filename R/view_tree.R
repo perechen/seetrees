@@ -9,6 +9,7 @@
 #' @param output TRUE/FALSE. Enable .txt output with cluster information.
 #' @param label_size Numeric. Controls the size of features on 'list' plots.
 #' @param leaf_size Numeric. Controls the size of leaf labels in dendrogram.
+#' @param right_margin Numeric. Controls the right margin of the dendrogram (use it if leaf labels do not fit). Default is 2
 #'
 #' @return Draws two plots and saves an optional .txt file
 #' @export
@@ -28,12 +29,13 @@
 #' view_tree(stylo_res)
 #' }
 view_tree <- function(stylo_res,
-                       k=2,
-                       p=0.05,
-                       color_leaves=F,
-                       output=T,
-                       label_size=6,
-                       leaf_size=1) {
+                      k=2,
+                      p=0.05,
+                      color_leaves=F,
+                      output=T,
+                      label_size=6,
+                      leaf_size=1,
+                      right_margin=2) {
 
 #' @import tidyr
 #' @import dplyr
@@ -118,7 +120,7 @@ tr <- tr %>%
 
 
 ## plotting
-par(mfrow=c(1,1),mar = c(2,2,2,22))
+par(mfrow=c(1,1),mar = c(2,2,2,right_margin))
 tr %>% plot(horiz=T,main=paste("Hierarchical clustering,"," cut at k=",k))
 tr %>% rect.dendrogram(horiz = TRUE, border = clust_clrs,lty=5,lwd=3,k=k)
 

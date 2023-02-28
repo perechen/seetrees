@@ -11,7 +11,8 @@ view_tree(
   color_leaves = F,
   output = T,
   label_size = 6,
-  leaf_size = 1
+  leaf_size = 1,
+  right_margin = 2
 )
 }
 \arguments{
@@ -28,6 +29,8 @@ view_tree(
 \item{label_size}{Numeric. Controls the size of features on 'list' plots.}
 
 \item{leaf_size}{Numeric. Controls the size of leaf labels in dendrogram.}
+
+\item{right_margin}{Numeric. Controls the right margin of the dendrogram (use it if leaf labels do not fit). Default is 2}
 }
 \value{
 Draws two plots and saves an optional .txt file
