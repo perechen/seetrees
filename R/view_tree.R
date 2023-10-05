@@ -134,6 +134,12 @@ corr <- FactoMineR::catdes(t, num.var = 1,proba = p)
 
 k_names <- names(corr$quanti)
 
+if(is.null(k_names)) {
+  message("Error! No feature associated with clusters at chosen p threshold")
+  stop()
+
+}
+
 dfs <- lapply(corr$quanti, function(x) {
   f <- rownames(x)
   tb <- as_tibble(x) %>%
