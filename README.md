@@ -30,8 +30,9 @@ It should produce two plots (a dendrogram cut to groups , and lists of words ass
 **Note:** words associated with clusters are determined by calculating  correlation ratio $\eta^2$ of word frequency ($f$) across clusters ($c$) and documents ($d$). Then results are filtered by p-value (which might not make sense at all). Notation adopted from [Cafiero & Camps 2020](https://www.science.org/doi/full/10.1126/sciadv.aax5489#sec-4), implementation by `catdes()` from [FactoMineR](http://factominer.free.fr/)  
  
 $$
-\eta^2 = \frac{\sum_\nolimits{c} \sum_\nolimits{d}(f_{dc} - \bar{f}_c)^2}{\sum_\nolimits{c} \sum_\nolimits{d}(f_{dc} - \bar{f})^2}
+\eta^2 = \frac{\sum_\nolimits{c} \sum_\nolimits{d}(f_{d,c}-\bar{f_c})^2}{\sum_\nolimits{c} \sum_\nolimits{d}(f_{d,c} - \bar{f})^2}
 $$
+
  
 
 
