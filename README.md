@@ -10,7 +10,7 @@ Install from GitHub (make sure you have `devtools` package):
 devtools::install_github("perechen/seetrees")
 ```
 
-## Example
+## view_tree()
 
 ```r
 library(stylo)
@@ -21,7 +21,9 @@ data(lee) ## load one of the stylo datasets
 stylo_res <- stylo(frequencies=lee,gui=F)
 view_tree(stylo_res, k=2,right_margin=12) ## redraws a dendrogram based on distance matrix, cuts it to k groups, shows associated features 
 ```
+
 Check `?view_tree()` for more details.
+
 
 It should produce two plots (a dendrogram cut to groups , and lists of words associated with groups)
 ![dendro](https://i.imgur.com/YI7Ov1z.png)
@@ -33,7 +35,22 @@ $$
 \eta^2 = \frac{\sum_\nolimits{c} \sum_\nolimits{d}(f_{d,c}-\bar{f_c})^2}{\sum_\nolimits{c} \sum_\nolimits{d}(f_{d,c} - \bar{f})^2}
 $$
 
- 
+ ## view_scores()
+
+ Simple visualisation of most distinctive features in a text, or a class (an author). It uses corpus-wide scaled (z-scored) feature frequencies, and returns deviations (in both directions) of the top $n$ features. Quick and dirty way to ask "What is going on in here?".  
+
+ ```r
+library(stylo)
+library(seetrees)
+
+data(lee) ## load one of the stylo datasets
+
+stylo_res <- stylo(frequencies=lee,gui=F)
+# ask for 20 (positive and negative) features in Faulkner's "Absalom! Absalom!" that deviate from the corpus mean the most 
+view_scores(stylo_res, target_text="Faulkner_Absalom_1936",top=20) 
+```
+
+Returns a column plot that shows preferred (pink) and avoided (lightblue) words. **NB** Numbers on columns indicate the feature's corus-wide frequency rank. Dashed lines mark the mean, +-1 and +-2 SD.
 
 
-Check `?view_tree()` for more details.
+![absalom](https://imgur.com/a/OVveN2r)
