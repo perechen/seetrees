@@ -50,7 +50,7 @@ stylo_res <- stylo(frequencies=lee,gui=F)
 view_scores(stylo_res, target_text="Faulkner_Absalom_1936",top=20) 
 ```
 
-Returns a column plot that shows preferred (pink) and avoided (lightblue) words. **NB** Numbers on columns indicate the feature's corus-wide frequency rank. Dashed lines mark the mean, +-1 and +-2 SD.
+Returns a column plot that shows preferred (pink) and avoided (lightblue) words. **NB** Numbers on columns indicate the feature's corpus-wide frequency rank. Dashed lines mark the mean, +-1 and +-2 SD.
 
 
 ![absalom](https://i.imgur.com/o7nM0jv.png)
