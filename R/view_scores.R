@@ -102,6 +102,8 @@ view_scores <- function(stylo_res,
     geom_vline(xintercept=c(-1,1),color="grey",linetype=2) +
     geom_vline(xintercept=c(-2,2),color="lightgrey",linetype=2) +
     guides(fill="none") +
-    labs(title=paste0("Top ", top, " z-scores in ", title_label),x="Standard deviation from the mean",y="Features")
+    labs(title=paste0("Top ", top, " z-scores in ", title_label),x="Standard deviation from the mean",y="Features") +
+    theme_classic() +
+    theme(axis.line = element_blank(),panel.grid.major.y = element_line())
 
 }
