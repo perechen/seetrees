@@ -12,4 +12,4 @@ Depends:
     R (>= 4.1.2)
 Imports:
   tidyr, dplyr,  stringr, FactoMineR, dendextend, ggplot2
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.1

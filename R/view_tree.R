@@ -1,6 +1,6 @@
 
 #' Cut the trees, see the words!
-#' @description A bundled function that takes an input from stylo() run, (re)draws a dendrogram (Ward's linkage, stylo's default), cuts it to an arbitrary numbers of groups and finds features that are associated with them.
+#' @description A bundled function that takes an input from a stylo() run, re-draws a dendrogram (Ward's linkage, stylo's default), cuts it to a selected numbers of groups and finds features that are associated with them.
 #'
 #' @param stylo_res Input data. Results from a stylo() run. Function will yell if you pass something other than 'stylo.results' class.
 #' @param k Cuts a tree to a specified number of groups. Unexpected behavior possible if *k* > 5.
@@ -43,10 +43,15 @@ view_tree <- function(stylo_res,
 #' @import FactoMineR
 #' @import dendextend
 #' @import ggplot2
+#' @importFrom graphics par
+#' @importFrom stats as.dendrogram as.dist hclust
+
+### bindings
+
+feature=k_id=label=v.test=NULL
 
 
-
-if(class(stylo_res) != "stylo.results") {
+if(!inherits(stylo_res,what = "stylo.results")) {
   stop("\nWrong input! Data should come from `stylo()` results!")
 }
 

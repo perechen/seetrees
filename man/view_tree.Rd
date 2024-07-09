@@ -36,7 +36,7 @@ view_tree(
 Draws two plots and saves an optional .txt file
 }
 \description{
-A bundled function that takes an input from stylo() run, (re)draws a dendrogram (Ward's linkage, stylo's default), cuts it to an arbitrary numbers of groups and finds features that are associated with them.
+A bundled function that takes an input from a stylo() run, re-draws a dendrogram (Ward's linkage, stylo's default), cuts it to a selected numbers of groups and finds features that are associated with them.
 }
 \examples{
 \dontrun{
