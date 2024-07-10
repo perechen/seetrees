@@ -1,6 +1,6 @@
 # seetrees
 
-Package that extends some `stylo` capabilities and enhances interpretation of (unsupervised clustering) analysis.
+Package that extends some `stylo` capabilities and enhances interpretation of (unsupervised clustering) analysis. Includes few convenience functions for teaching and demonstration purposes.
 
 ## Installation
 
