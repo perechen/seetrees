@@ -52,7 +52,7 @@ view_scores(stylo_res, target_text="Faulkner_Absalom_1936",top=20)
 
 Returns a column plot that shows preferred (pink) and avoided (lightblue) words. **NB** Numbers on columns indicate the feature's corpus-wide frequency rank. Dashed lines mark the mean, +-1 and +-2 SD.  
 
-Check ?view_tree() for more details.
+Check `?view_scores()` for more details.
 
 
 ![absalom](https://i.imgur.com/NyoLT0g.png)
