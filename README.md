@@ -55,4 +55,4 @@ Returns a column plot that shows preferred (pink) and avoided (lightblue) words.
 Check `?view_scores()` for more details.
 
 
-![absalom](https://i.imgur.com/uBncGKc.png)
+![absalom](https://i.imgur.com/7WuRqdM.png)
