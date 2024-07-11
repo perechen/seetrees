@@ -115,7 +115,6 @@ view_scores <- function(stylo_res,
          y=NULL) +
     theme_classic() +
     theme(axis.line = element_blank(),
-          panel.grid.major.y = element_line(),
           axis.text.y=element_blank(),
           axis.ticks.y=element_blank(),
           plot.title = element_text(hjust = 0.5))
