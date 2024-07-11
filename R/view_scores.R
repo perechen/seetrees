@@ -91,19 +91,33 @@ view_scores <- function(stylo_res,
   }
 
 
+  word_label <- df_select %>% ungroup() %>% mutate(score=ifelse(score > 0, score <- -0.2,score <- 0.2))
+
+
 
   ## draw
-  df_select %>%
+  p <- df_select %>%
     ggplot(aes(score,reorder(word,score),fill=direction)) +
     geom_col() +
+    ## text labels
+    geom_text(data=word_label %>% filter(score < 0), aes(label=word),color="grey30",size=3.5,hjust=1,nudge_x = 0.1) +
+    geom_text(data=word_label %>% filter(score > 0), aes(label=word),color="grey30",size=3.5,hjust=0,nudge_x = -0.1) +
     geom_text(aes(score/2,label=rank),color="white",size=3) +
-    scale_fill_manual(values=c("lightblue", "pink")) +
+    ## mean + SD lines
     geom_vline(xintercept=0,color="red",linetype=2) +
     geom_vline(xintercept=c(-1,1),color="grey",linetype=2) +
     geom_vline(xintercept=c(-2,2),color="lightgrey",linetype=2) +
+    ### visuals / theme
     guides(fill="none") +
-    labs(title=paste0("Top ", top, " z-scores in ", title_label),x="Standard deviation from the mean",y="Features") +
+    scale_fill_manual(values=c("lightblue", "pink")) +
+    labs(title=paste0("Top ", top, " z-scores in ", title_label),
+         x="Standard deviation from the corpus mean",
+         y=NULL) +
     theme_classic() +
-    theme(axis.line = element_blank(),panel.grid.major.y = element_line())
+    theme(axis.line = element_blank(),
+          panel.grid.major.y = element_line(),
+          axis.text.y=element_blank(),
+          axis.ticks.y=element_blank(),
+          plot.title = element_text(hjust = 0.5))
 
 }
