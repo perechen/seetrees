@@ -120,4 +120,7 @@ view_scores <- function(stylo_res,
           axis.ticks.y=element_blank(),
           plot.title = element_text(hjust = 0.5))
 
+  return(p)
+
 }
+
