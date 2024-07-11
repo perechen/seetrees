@@ -4,12 +4,12 @@ Title: Extended features for `stylo`
 Version: 0.1.0
 Author: Artjoms Šeļa
 Maintainer: The package maintainer <artemy.she@gmail.com>
-Description: The package purpose is to enhance interpretability of stylometry, and specifically unsupervised analysis. For now, the package is used to conveniently cut (and visualize) dendrograms at chosen height and find features associated with clusters. 
+Description: The package purpose is to enhance interpretability of stylometry, and specifically unsupervised analysis.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 4.1.2)
 Imports:
-  tidyr, dplyr,  stringr, FactoMineR, dendextend, ggplot2
+  tidyr, dplyr,  stringr, FactoMineR, dendextend, ggplot2, ggrepel
 RoxygenNote: 7.3.1

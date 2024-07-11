@@ -56,3 +56,31 @@ Check `?view_scores()` for more details.
 
 
 ![absalom](https://i.imgur.com/7WuRqdM.png)
+
+## compare_scores()
+
+Compares two documents based on used features in `stylo()`. Draws z-scores profile, or difference profile with the option to annotate largest differences
+
+ ```r
+library(stylo)
+library(seetrees)
+
+data(lee) ## load one of the stylo datasets
+
+stylo_res <- stylo(frequencies=lee,gui=F)
+# compare "To Kill a Mocking Bird" and "In Cold Blood", annotate 10 features that behave most differently
+compare_scores(stylo_res,
+			   source_text="HarperLee_Mockingbird_1960",
+			   target_text="Capote_Blood_1966",
+			   top_diff=10,
+			   type="profile")
+
+```
+
+![profile](https://i.imgur.com/NOVHf5A.png)  
+
+Also supports `type="diff"` flavor of visualisation (profile of differences)
+
+![diff](https://i.imgur.com/hwTQgIk.png)
+
+
