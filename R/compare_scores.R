@@ -91,7 +91,7 @@ if(type=="profile") {
 
     p <- df_long %>% ggplot(aes(x=rank)) +
     geom_line(aes(y=value,color=text),alpha=0.7) +
-    geom_segment(data=labels,aes(y=scoreA,yend=scoreB),color="grey30",linetype=3) +
+    geom_segment(data=labels,aes(y=scoreA,yend=scoreB,xend=rank),color="grey30",linetype=3) +
     scale_color_manual(values=c('pink',"lightblue")) +
     geom_point(data=labels %>% filter(diff < 0),aes(y=scoreB),color="lightblue",size=2) +
     geom_point(data=labels %>% filter(diff > 0),aes(y=scoreA),color="pink",size=2) +

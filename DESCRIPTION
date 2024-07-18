@@ -9,7 +9,7 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Depends: 
-    R (>= 4.1.2)
+    R (>= 4.1.0)
 Imports:
   tidyr, dplyr,  stringr, FactoMineR, dendextend, ggplot2, ggrepel
-RoxygenNote: 7.3.1
+RoxygenNote: 7.2.3
